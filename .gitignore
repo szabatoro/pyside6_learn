@@ -4,5 +4,6 @@ dist/
 build/
 .ropeproject/
 .vscode/
+.idea/
 *.code-workspace
 *.spec

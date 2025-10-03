@@ -14,45 +14,45 @@
    <string>Pac-Up</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QWidget" name="verticalLayoutWidget">
-    <property name="geometry">
-     <rect>
-      <x>9</x>
-      <y>9</y>
-      <width>781</width>
-      <height>521</height>
-     </rect>
-    </property>
-    <layout class="QVBoxLayout" name="verticalLayout">
-     <item>
-      <widget class="QTableView" name="updateview"/>
-     </item>
-     <item>
-      <widget class="QPushButton" name="fetchupdate">
-       <property name="text">
-        <string>Fetch updates</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="updatebutton">
-       <property name="text">
-        <string>Update</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPlainTextEdit" name="pacmanoutput">
-       <property name="readOnly">
-        <bool>true</bool>
-       </property>
-       <property name="placeholderText">
-        <string>Pacman update output will be printed here...</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </widget>
+   <property name="minimumSize">
+    <size>
+     <width>800</width>
+     <height>500</height>
+    </size>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_2">
+    <item>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <widget class="QTableView" name="updateview"/>
+      </item>
+      <item>
+       <widget class="QPushButton" name="fetchupdate">
+        <property name="text">
+         <string>Fetch updates</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="updatebutton">
+        <property name="text">
+         <string>Update</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPlainTextEdit" name="pacmanoutput">
+        <property name="readOnly">
+         <bool>true</bool>
+        </property>
+        <property name="placeholderText">
+         <string>Pacman update output will be printed here...</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">

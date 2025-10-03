@@ -26,32 +26,34 @@ class Ui_MainWindow(object):
         MainWindow.resize(800, 600)
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
-        self.verticalLayoutWidget = QWidget(self.centralwidget)
-        self.verticalLayoutWidget.setObjectName(u"verticalLayoutWidget")
-        self.verticalLayoutWidget.setGeometry(QRect(9, 9, 781, 521))
-        self.verticalLayout = QVBoxLayout(self.verticalLayoutWidget)
+        self.centralwidget.setMinimumSize(QSize(800, 500))
+        self.verticalLayout_2 = QVBoxLayout(self.centralwidget)
+        self.verticalLayout_2.setObjectName(u"verticalLayout_2")
+        self.verticalLayout = QVBoxLayout()
         self.verticalLayout.setObjectName(u"verticalLayout")
-        self.verticalLayout.setContentsMargins(0, 0, 0, 0)
-        self.updateview = QTableView(self.verticalLayoutWidget)
+        self.updateview = QTableView(self.centralwidget)
         self.updateview.setObjectName(u"updateview")
 
         self.verticalLayout.addWidget(self.updateview)
 
-        self.fetchupdate = QPushButton(self.verticalLayoutWidget)
+        self.fetchupdate = QPushButton(self.centralwidget)
         self.fetchupdate.setObjectName(u"fetchupdate")
 
         self.verticalLayout.addWidget(self.fetchupdate)
 
-        self.updatebutton = QPushButton(self.verticalLayoutWidget)
+        self.updatebutton = QPushButton(self.centralwidget)
         self.updatebutton.setObjectName(u"updatebutton")
 
         self.verticalLayout.addWidget(self.updatebutton)
 
-        self.pacmanoutput = QPlainTextEdit(self.verticalLayoutWidget)
+        self.pacmanoutput = QPlainTextEdit(self.centralwidget)
         self.pacmanoutput.setObjectName(u"pacmanoutput")
         self.pacmanoutput.setReadOnly(True)
 
         self.verticalLayout.addWidget(self.pacmanoutput)
+
+
+        self.verticalLayout_2.addLayout(self.verticalLayout)
 
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)

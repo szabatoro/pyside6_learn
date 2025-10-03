@@ -9,11 +9,12 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.setupUi(self)
 
         # Hook up model for the update table view
-        self.updateview.model = UpdateTableModel(fetch_updates())
-        self.updateview.setModel(self.updateview.model)
+        def fill_update_table():
+            self.updateview.model = UpdateTableModel(fetch_updates())
+            self.updateview.setModel(self.updateview.model)
 
         # Refresh model data with output of pacman -Qu, blank out previous pacman output
-        self.fetchupdate.clicked.connect(lambda: self.updateview.model.refresh_data(fetch_updates()))
+        self.fetchupdate.clicked.connect(fill_update_table)
         self.fetchupdate.clicked.connect(lambda: self.pacmanoutput.setPlainText(""))
 
         # Update the packages listed in the update table view
@@ -27,7 +28,6 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             else:
                 self.updatebutton.setText("Update")
                 self.updatebutton.setEnabled(True)
-        are_there_updates()
 
         # Execute the previous function whenever the update view is refreshed
         self.fetchupdate.clicked.connect(are_there_updates)
